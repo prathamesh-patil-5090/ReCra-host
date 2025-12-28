@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# exit on error
+set -o errexit
+
+# Install Python dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# Download spaCy model
+python -m spacy download en_core_web_sm
+
+# Collect static files
+python manage.py collectstatic --no-input
+
+# Run migrations
+python manage.py migrate
