@@ -6,7 +6,7 @@ services:
     startCommand: "gunicorn ReCra.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.9
+        value: 3.9.13
       - key: SECRET_KEY
         generateValue: true
       - key: DEBUG
