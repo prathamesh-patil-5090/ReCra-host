@@ -3,7 +3,7 @@ services:
     name: recra-backend
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn ReCra.wsgi:application"
+    startCommand: "gunicorn ReCra.wsgi:application --timeout 120"
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.13
